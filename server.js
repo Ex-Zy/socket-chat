@@ -18,7 +18,11 @@ io.on("connection", (socket) => {
   console.log("User is connected", socket.id);
 
   socket.on("chat:message", (msg) => {
-    io.emit("chat:message", msg);
+    socket.broadcast.emit("chat:message", msg);
+  });
+
+  socket.on("chat:clear", () => {
+    socket.broadcast.emit("chat:clear");
   });
 
   socket.on("disconnect", () => console.log("Disconected user"));
