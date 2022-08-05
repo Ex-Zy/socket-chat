@@ -11,7 +11,8 @@ body {
   left: 0;
   right: 0;
   display: flex;
-  height: 3rem;
+  flex-direction: column;
+  height: 100px;
   box-sizing: border-box;
   backdrop-filter: blur(10px);
 }
@@ -25,7 +26,7 @@ body {
 #input:focus {
   outline: none;
 }
-#form > button {
+#form button {
   background: #333;
   border: none;
   padding: 0 1rem;
@@ -33,6 +34,9 @@ body {
   border-radius: 3px;
   outline: none;
   color: #fff;
+  cursor: pointer;
+  flex-grow: 1;
+  max-width: none;
 }
 
 #messages {
@@ -45,4 +49,8 @@ body {
 }
 #messages > li:nth-child(odd) {
   background: #efefef;
+}
+.wrp-buttons {
+  display: flex;
+  height: 40px;
 }

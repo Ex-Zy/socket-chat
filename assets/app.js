@@ -6,9 +6,7 @@ form.addEventListener("submit", (e) => {
 
   if (input.value) {
     socket.emit("chat:message", input.value);
-    ul.innerHTML += `<li>${input.value}</li>`;
     input.value = "";
-    window.scrollTo(0, document.body.scrollHeight);
   }
 });
 

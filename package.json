@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./server.js"
+    "start": "nodemon ./server.js",
+    "watch": "npx browser-sync start --proxy \"http://localhost:5500/\" --files \"./assets/*\" \"./index.html\"" 
   },
   "author": "",
   "license": "ISC",

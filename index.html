@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/style.css" />
     <title>Socket.IO chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
     <ul id="messages"></ul>
     <form id="form">
       <input id="input" autocomplete="off" />
-      <button type="button" id="clear">Clear</button>
+      <div class="wrp-buttons">
+        <button type="button" id="clear">Clear</button>
+        <button type="submit">Submit</button>
+      </div>
     </form>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/app.js"></script>

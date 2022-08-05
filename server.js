@@ -18,16 +18,19 @@ io.on("connection", (socket) => {
   console.log("User is connected", socket.id);
 
   socket.on("chat:message", (msg) => {
-    socket.broadcast.emit("chat:message", msg);
+    io.emit("chat:message", msg);
   });
 
   socket.on("chat:clear", () => {
-    socket.broadcast.emit("chat:clear");
+    io.emit("chat:clear");
   });
 
   socket.on("disconnect", () => console.log("Disconected user"));
 });
 
-server.listen(3000, () => {
-  console.log("App listen 3000 port");
+const HOST = "localhost";
+const PORT = 5500;
+
+server.listen(PORT, HOST, () => {
+  console.log(`App listen on http://${HOST}:${PORT}`);
 });
